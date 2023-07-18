@@ -1,0 +1,38 @@
+{
+  "name": "inlang-plugin-react-intl",
+  "version": "0.0.1",
+  "description": "Allows you to use react-intl with inlang.",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n build,test -c auto \"npm run dev:plugin\" \"npm run tsc:watch\"",
+    "dev:plugin": "DEV=true tsx ./build.ts",
+    "build": "tsx ./build.ts && tsc -p tsconfig.build.json",
+    "test": "npm run tsc && npm run vitest",
+    "vitest": "vitest run",
+    "vitest:watch": "vitest",
+    "tsc": "tsc --noEmit",
+    "tsc:watch": "tsc --watch --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openscript-ch/inlang-plugin-react-intl.git"
+  },
+  "keywords": [
+    "inlang-plugin"
+  ],
+  "author": "openscript Ltd.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/openscript-ch/inlang-plugin-react-intl/issues"
+  },
+  "homepage": "https://github.com/openscript-ch/inlang-plugin-react-intl#readme",
+  "devDependencies": {
+    "@inlang/core": "^0.9.2",
+    "@types/node": "^20.4.2",
+    "concurrently": "^8.2.0",
+    "esbuild": "^0.18.14",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
+  }
+}
